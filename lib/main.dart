@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:math';
 
 import 'package:flutter/material.dart';
@@ -19,8 +20,10 @@ class MyButtonState extends State<MyButton> {
 
   void onPressOfButton() {
     setState(() {
-      _controller.text = mask(generateSnils());
-      displayedString = generateSnils();
+      Timer(Duration(milliseconds: 200), () {
+        _controller.text = mask(generateSnils());
+        displayedString = generateSnils();
+      });
     });
   }
 
@@ -37,7 +40,6 @@ class MyButtonState extends State<MyButton> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               TextField(
-                // decoration: InputDecoration(labelText: displayedString, enabledBorder: InputBorder.none),
                 decoration: InputDecoration.collapsed(
                     hintText: mask(generateSnils()), hintStyle: TextStyle(fontSize: 40.0, color: Colors.green)),
                 controller: _controller,
