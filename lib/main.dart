@@ -36,7 +36,7 @@ class MyButtonState extends State<MyButton> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
-              TextFormField(
+              TextField(
                 // decoration: InputDecoration(labelText: displayedString, enabledBorder: InputBorder.none),
                 decoration: InputDecoration.collapsed(
                     hintText: mask(generateSnils()), hintStyle: TextStyle(fontSize: 40.0, color: Colors.green)),
@@ -44,9 +44,6 @@ class MyButtonState extends State<MyButton> {
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 40.0, color: Colors.green),
                 readOnly: true,
-                validator: (snils) {
-                  return snils = "2132";
-                },
               ),
               Padding(padding: EdgeInsets.all(10.0)),
               ButtonTheme(
